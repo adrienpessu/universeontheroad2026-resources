@@ -1,9 +1,13 @@
-# Customer success story and Q&A — Presenter Resources
+# Customer Success Story
 
-> **Resources not yet available.** The presentation deck, presenter guide, recording, and demo resources for this session have not been published yet. This page will be updated when they are ready.
+## Session overview
 
-If you are presenting this session, contact the content owner for the latest materials.
+This session features customers sharing their experiences, successes, and lessons learned using GitHub and Microsoft technologies. The local event teams should coordinate directly with participating customers to ensure their presentations are available and ready for delivery.
 
-**Content owner:** April Yoho — [GitHub](https://github.com/scubaninja)
+Customers will **bring and present their own slide decks**, sharing their stories directly with attendees.
 
-[Back to all sessions](../../README.md)
+## Presenter preparation
+
+**No presenter preparation is required for this session.** Customers are responsible for their own presentation content and slides.
+
+
