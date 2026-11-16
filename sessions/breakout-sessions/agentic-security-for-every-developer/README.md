@@ -10,7 +10,8 @@ Presenter and re-delivery materials for **Agentic security for every developer**
 | Presentation deck | [Slides](https://microsofteur.sharepoint.com/:p:/t/UniverseontheRoad/cQqHJUOf-oSLS4q_gqQOPSi6EgUBrTFO9cJPabj1QHi2MTO9Kg) | Slides and speaker notes |
 | Session recording | Not available — use the deck and speaker notes | |
 | Presenter guide | [Presenter guide](speaker-resources/presenter-guide.md) | Talk track, timing, and transitions |
-| Demo resources | [Demo guide / repository](https://github.com/dsp-testing/banking-customer-support/pull/7) | Setup, steps, and expected result |
+| Demo resources (GitHub Only) | [Demo guide / repository GitHub Only](https://github.com/octodemo/agentic-security-for-every-developer) | Setup, steps, and expected result |
+| Demo resources (Microsoft Only) | [Demo guide / repository GitHub Only](https://github.com/msft-common-demos/agentic-security-for-every-developer) | Setup, steps, and expected result |
 
 ## 1. Learn the presentation
 
@@ -24,7 +25,7 @@ Use the [presenter guide](speaker-resources/presenter-guide.md) for the full tal
 
 ## 3. Reproduce the demo
 
-Use the [demo repository](https://github.com/dsp-testing/banking-customer-support/pull/7) and run the demo end-to-end before presenting. Confirm the expected result and that the backup works.
+Use the [demo repository GitHub](https://github.com/octodemo/agentic-security-for-every-developer) or [demo repository Microsoft](https://github.com/msft-common-demos/agentic-security-for-every-developer), prepare with in and run the demo end-to-end before presenting. Confirm the expected result and that the backup works.
 
 ## Final checklist
 
