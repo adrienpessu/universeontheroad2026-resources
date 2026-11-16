@@ -9,11 +9,13 @@ Session format: Approximately 30 minutes
 
 | Item | Link | Purpose |
 | --- | --- | --- |
-| Presentation deck | [Slides](https://microsofteur.sharepoint.com/:p:/t/UniverseontheRoad/cQrc9iPk2uWNS6I9y09nmgpKEgUBpRhpfHqC8WBcITqGsGPqmQ) | Presentation slides and speaker notes |
-| Session recording | Not available | Use the deck, presenter guide, and demo notes |
-| Presenter guide | [Presenter guide](speaker-resources/presenter-guide.md) | Talk track, slide flow, timing, and transitions |
-| Demo repository | [Agentic security demo](https://github.com/octodemo/agentic-security-for-every-developer) | Demo resources and setup |
-| Demo instructions | [Demo notes](https://github.com/octodemo/agentic-security-for-every-developer/blob/main/DEMO_NOTES.md) | Walkthrough and expected results |
+
+| Presentation deck | [Slides](https://microsofteur.sharepoint.com/:p:/t/UniverseontheRoad/cQqHJUOf-oSLS4q_gqQOPSi6EgUBrTFO9cJPabj1QHi2MTO9Kg) | Slides and speaker notes |
+| Session recording | Not available — use the deck and speaker notes | |
+| Presenter guide | [Presenter guide](speaker-resources/presenter-guide.md) | Talk track, timing, and transitions |
+| Demo resources (GitHub Only) | [Demo guide / repository GitHub Only](https://github.com/octodemo/agentic-security-for-every-developer) | Setup, steps, and expected result |
+| Demo resources (Microsoft Only) | [Demo guide / repository GitHub Only](https://github.com/msft-common-demos/agentic-security-for-every-developer) | Setup, steps, and expected result |
+
 
 ## 1. Learn the presentation
 

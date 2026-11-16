@@ -2,125 +2,159 @@
 
 ## Session overview
 
-This session introduces GitHub's approach to agentic security, demonstrating how GitHub Advanced Security and Copilot help developers prevent, detect, and remediate vulnerabilities throughout the agent-native software development lifecycle.
+This session introduces GitHub's approach to agentic security, demonstrating how GitHub Advanced Security and Copilot help developers detect, prevent, and remediate security vulnerabilities throughout the software development lifecycle.
 
-**Core message:** Security must keep pace with AI-driven development. GitHub is embedding security directly into developer and agent workflows, helping teams identify and fix vulnerabilities earlier, secure AI-generated code, and remediate security backlogs at scale.
+**Core message:** Security needs to keep pace with AI-driven development. GitHub is bringing security directly into developer workflows, using AI agents to identify and fix vulnerabilities earlier and at scale.
 
 ### Before you present
 
-- Review the presentation deck and accompanying speaker notes.
-- Review the [demo repository and instructions](https://github.com/octodemo/agentic-security-for-every-developer/blob/main/DEMO_NOTES.md).
-- Familiarise yourself with GitHub Advanced Security, CodeQL, AI Scan, Deep Scans, Copilot security reviews, and Agentic Autofix.
-- Confirm access to all required demo environments and enabled features.
-- Prepare completed scans, security findings, and remediation pull requests as backups.
-- Rehearse the guest presenter handoff if delivering with a second presenter.
-- Verify product availability, statistics, and links before presenting.
+- Review the presentation deck and AI session summary for additional talking points.
+- Familiarise yourself with GitHub Advanced Security, CodeQL, AI scanning, and Agentic Autofix.
+- Confirm access to the demo environments and enabled features.
+- Prepare completed scans and remediation pull requests as backups.
+- Rehearse the guest demo handoff if delivering with a second presenter.
 
-**Session timing:** Approximately 40 minutes — 15 minutes of slides and 25 minutes of demonstrations, including one guest demo.
+**Session timing:** Approximately 15 minutes of slides and 25 minutes of demonstrations.
+
+#### Get prepared
+
+- Install the Advanced Security plugins in the Copilot app so the Security canvas is available, then open it with the existing findings loaded.
+- In the Copilot app, import the repository, create a new session, and say “hello” in chat. Then use the right panel to browse the repository files.
+go to open `products/urls.py` and replace the content with :
+
+```python
+from django.urls import path
+
+from . import catalog, views
+
+app_name = 'products'
+
+urlpatterns = [
+    path('', catalog.ProductList.as_view(), name='list'),
+    path('products/add/', catalog.ProductCreate.as_view(), name='create'),
+    path('products/generate-description/', catalog.generate_description, name='generate-description'),
+    path('products/<int:pk>/', catalog.ProductDetail.as_view(), name='detail'),
+    path('products/<int:pk>/edit/', catalog.ProductUpdate.as_view(), name='update'),
+    path('products/<int:pk>/delete/', catalog.ProductDelete.as_view(), name='delete'),
+    path('products/<int:pk>/photo/', catalog.product_photo, name='photo'),
+    path('__insecure__/catalog-search/', views.catalog_search),
+    path('__insecure__/price-report/', views.price_report),
+    path('__insecure__/search-heading/', views.search_heading),
+    path('__insecure__/promotion-preview/', views.promotion_preview),
+    path('__insecure__/stock-notice/', views.stock_notice),
+    path('__insecure__/supplier-probe/', views.supplier_probe),
+    path('__insecure__/supplier-price/', views.supplier_price),
+]
+
+```
+You will be ready for the `/security-review` command
+
+**Do not change settings. Make changes only as part of this demo flow.**
 
 ## Session flow
 
 ### 1. Setting the scene (Slides 1–5)
 
-- Introduce GitHub's mission to secure the agent-native engineering system, where humans and AI agents build software together.
-- Explain the growing security challenge: vulnerability disclosures continue to increase while automated attacks significantly reduce the time between discovery and exploitation.
-- Introduce GitHub Advanced Security and its four core pillars:
-  - **Code Security:** Identify vulnerabilities across repositories and pull requests.
-  - **Code Quality:** Improve code quality through automated checks and coverage.
-  - **Supply Chain Security:** Detect and prevent vulnerable dependencies.
-  - **Copilot Autofix:** Accelerate vulnerability remediation.
-- Explain why security cannot wait until code reaches a pull request.
-- Introduce GitHub's approach to embedding security throughout the development lifecycle: agent loop, CLI, IDE, Copilot App, pull requests, repositories, and enterprise remediation.
-
-**Key message:** Security must adapt its speed and depth to every stage of development, preventing vulnerabilities before they reach production.
+- Security threats and vulnerability disclosures are increasing, while the time available to respond is shrinking.
+- Introduce the GitHub Advanced Security pillars: **code security, code quality, supply chain security, and Copilot Autofix**.
+- Explain why security must be integrated throughout the SDLC, not just when code reaches a pull request.
+- Introduce GitHub's approach to securing every stage of agent-driven development.
 
 ### 2. Securing the agent loop (Slides 6–7)
 
-- Explain how security checks are integrated directly into AI coding-agent workflows.
-- Highlight automatic code, dependency, and secret security checks for supported agents.
-- Explain how CodeQL identifies vulnerabilities, dependency checks identify known risks, and secret scanning detects exposed credentials.
-- Demonstrate how agents detect and resolve security issues before committing code.
-- Highlight that Copilot cloud agent security validation is enabled without requiring a separate GitHub Advanced Security license.
-
-**Demo — Agent loop security checks**
-
-- Show the security validation performed during an agent-driven coding task.
-- Highlight detected issues and how the agent addresses them.
-- Demonstrate the resulting code changes and security validation.
+- Explain how security checks are integrated into coding-agent workflows.
+- Highlight code, dependency, and secret security checks.
+- Demonstrate how agents identify and fix issues before code is committed.
 
 ### 3. Security in developer environments (Slides 8–9)
 
-- Introduce proactive security reviews directly within developers' existing tools.
-- Demonstrate how developers can request on-demand security reviews using `/security-review` in the CLI.
-- Highlight side-by-side security findings and code in supported IDEs.
-- Introduce the Copilot security extension and security canvas for interactive scanning, triaging, and remediation.
-- Explain how these capabilities bring security expertise closer to developers without requiring them to switch tools.
+- Show how developers can request on-demand security reviews from the CLI.
+- Highlight security findings alongside code in supported IDEs.
+- Introduce the Copilot security extension and security canvas for reviewing, triaging, and fixing issues.
 
-**Demo — CLI, IDE, and Copilot Security Extension**
+#### Demo CCA
 
-- Run an on-demand security review from the CLI.
-- Show security findings within the IDE.
-- Demonstrate interactive investigation and remediation using the Copilot security extension.
+Open the Copilot Cloud agent session for the issue that has already been assigned. Show the secret scanning and CodeQL scan results.
+
+Learn more :
+https://docs.github.com/en/enterprise-cloud@latest/copilot/concepts/security-governance-and-network-settings/risks-and-mitigations
+
+Copilot cloud agent's security validation does not require a GitHub Secret Protection, GitHub Code Security, or GitHub Advanced Security license.
+- CodeQL is used to identify code security issues.
+- Newly introduced dependencies are checked against the GitHub Advisory Database for malware advisories, and for any CVSS-rated High or Critical vulnerabilities.
+- Secret scanning is used to detect sensitive information such as API keys, tokens, and other secrets.
+
+#### Demo `/secrurity-review` in the Copilot app
+
+In the copilot app, with the code prepared, you can now run a security review by executing:
+
+```text
+/security-review
+```
+
+Display the security-review results in the Security canvas alongside the existing alerts. Select an alert and use **Explain** to discuss it or **Fix** to start remediation. Review any proposed change and its tests before presenting the alert as resolved.
+
+https://github.blog/changelog/2026-07-14-security-reviews-now-available-in-the-github-copilot-app/
+https://github.blog/changelog/2026-10-28-security-extension-for-the-github-copilot-app/
+
+You can now run a security review on your in-flight code changes directly from the GitHub Copilot app. The /security-review slash command is bringing the same AI-driven vulnerability scanning already available in Copilot CLI into your everyday coding workflow.
+You can now work through your repository’s GitHub code scanning alerts without leaving the GitHub Copilot app. The new GitHub security extension, now in public preview, lets you find the alerts that matter most and ask Copilot to explain or help fix them.
+- High-confidence security findings, scored by severity and confidence.
+- Actionable suggestions you can apply and reverify without leaving Copilot.
+- A focused, prioritised view so you can fix the issues that matter before code lands.
 
 ### 4. AI-powered security scanning (Slides 10–11)
 
-- Explain how **CodeQL and AI Scan complement one another** to identify vulnerabilities.
-- Introduce hybrid scanning for pull requests, combining deterministic analysis with AI-powered detection.
-- Explain how AI Scan extends coverage to additional languages, frameworks, and vulnerabilities that traditional analysis might miss.
-- Highlight repository-wide AI scanning and the ability to perform deeper analysis of critical areas.
-- Explain how findings are maintained across rescans and how AI Scan avoids duplicating issues already identified by CodeQL.
-- Introduce AI application security risks, including cross-prompt-injection attacks.
-
-**Demo — Pull request and repository scanning**
-
-- Demonstrate AI scanning within a pull request.
-- Show how AI-generated findings complement CodeQL results.
-- If following the original delivery format, hand over to the guest presenter for the **PR XPIA scanning demonstration**, then return to the main presenter.
-- Demonstrate standard repository-wide AI scanning.
-- Show how Deep Scans provide more targeted analysis of critical code.
+- Explain how **CodeQL and AI scanning complement each other** to identify vulnerabilities.
+- Introduce standard AI scanning and deeper repository-level analysis.
+- Demonstrate security scanning on pull requests and across repositories.
+- Highlight AI application scanning for risks such as prompt injection, sensitive information disclosure, and excessive agency.
+- If using the original delivery format, hand over to the guest presenter for the AI application scanning demonstration, then return for repository scanning.
 
 ### 5. Agentic Autofix (Slides 12–13)
 
-- Explain the challenge of large vulnerability backlogs and the limited number of findings traditionally remediated.
-- Introduce Agentic Autofix as a way to accelerate remediation across repositories.
-- Highlight the improved remediation rates presented in the deck.
-- Explain how Agentic Autofix investigates vulnerabilities, proposes code changes, and validates fixes before creating pull requests.
-- Introduce bulk remediation and the use of Copilot memories to provide context for subsequent remediation tasks.
+- Explain the challenge of large vulnerability backlogs and manual remediation.
+- Introduce Agentic Autofix for addressing multiple security alerts.
+- Demonstrate selecting alerts and assigning remediation to Copilot.
+- Show how the agent investigates findings, proposes fixes, runs validation, and creates a pull request.
+- Highlight how Copilot memories can help improve future remediation.
 
-**Demo — Agentic Autofix and bulk remediation**
+#### Demo Agentic Autofix
 
-- Use vulnerabilities identified during the previous scanning demonstrations.
-- Select security alerts and initiate remediation using Agentic Autofix.
-- Show how the agent investigates relevant code, proposes fixes, and validates the changes.
-- Demonstrate the resulting remediation pull request.
-- Highlight Copilot memories and bulk remediation capabilities.
+Open the **Feature: Add extended view** pull request. Show the CodeQL findings in the Python code and the AI findings in the Terraform code.
+https://github.blog/changelog/2026-07-14-code-scanning-shows-ai-security-detections-on-pull-requests/
 
-**Key message:** Security agents can help teams move beyond identifying vulnerabilities to actively reducing security backlogs, while keeping developers involved in reviewing and approving changes.
+ AI-powered security detections directly on pull requests, expanding vulnerability coverage to languages and frameworks not currently supported by CodeQL.
 
-### 6. Wrap-up and next steps (Slides 14–16)
+Then open **Security & quality → Code Scanning**. Show the CodeQL findings and the AI scan findings for the Terraform code.
+https://github.blog/changelog/2026-10-28-ai-scan-for-repositories-in-public-preview/
 
-- Reinforce that GitHub is integrating security across the entire agent-native development lifecycle.
-- Summarise how attendees can access or enable the capabilities:
-  - **Agent Loop:** Security validation enabled by default for Copilot cloud agent jobs.
-  - **CLI & IDE:** Trigger a security review using `/security-review`.
-  - **PRs & Repositories:** Enable AI Scan in repository Advanced Security settings.
-  - **Deep Scans:** Request access using the link on the closing slide.
-  - **Copilot App:** Install the Copilot security extension.
-  - **Agentic Autofix:** Enable the capability through enterprise settings.
-- Encourage attendees to start by enabling security checks in their existing development workflows.
-- Thank attendees and direct them to the session feedback QR code.
+You can now use AI Scan to find vulnerabilities across your whole repository, not just in pull request changes. It covers languages and frameworks that CodeQL doesn’t support and finds issues that rule-based analysis can miss in languages CodeQL already covers.
+- An agentic code scanner explores your repository and focuses on the code most likely to contain vulnerabilities. Each scan runs within a fixed time budget, which keeps its cost bounded.
+- When both AI Scan and CodeQL are scanning the same repository, AI Scan skips issues that CodeQL already reports.
+- On rescans, AI Scan keeps existing findings open if it detects them again and only reports new findings.
+
+To showcase Agentic Autofix, select three existing alerts and assign them to Copilot. Wait three seconds, go to the pull request, and show the Copilot session.
+https://github.blog/changelog/2026-10-15-agentic-autofix-for-code-scanning-alerts-general-availability/
+
+Agentic autofix remediates alerts by working across your codebase the way a developer would: it explores relevant files, proposes a fix, and reruns CodeQL to confirm the fix closes the alert before opening a pull request for your review.
+
+if you have extra-time : 
+Show the AI vulnerability in the PR named : "Formatting in prompt for product description generation"
+https://github.blog/changelog/2026-10-28-code-scanning-for-ai-applications-in-public-preview/
+
+### 6. Wrap-up (Slides 14–15)
+
+- Reinforce that security is becoming integrated into every stage of development.
+- Summarise how developers can access security through agents, IDEs, the CLI, pull requests, and repositories.
+- Highlight the available configuration options and next steps for enabling the capabilities.
 
 ## Presenter checklist
 
-- [ ] Review the presentation deck and embedded speaker notes.
-- [ ] Review the demo repository and rehearse all four demonstration sections.
-- [ ] Verify that the required security features, licenses, and permissions are available.
-- [ ] Prepare backup scan results, security alerts, and completed remediation pull requests.
-- [ ] Confirm the Copilot security extension and CLI security review work as expected.
-- [ ] Coordinate and rehearse the guest presenter handoff, if applicable.
-- [ ] Verify statistics, product claims, and feature availability.
-- [ ] Confirm all links and calls to action on Slide 14 are working.
-- [ ] Check the final Agentic Autofix screenshot on Slide 12.
-- [ ] Confirm the feedback QR code is appropriate for the event.
+- [ ] Review the slides and AI session summary.
+- [ ] Confirm all required security features are available in the demo environment.
+- [ ] Rehearse each demonstration and prepare fallback examples.
+- [ ] Coordinate the guest presenter handoff, if applicable.
+- [ ] Verify feature availability, product claims, and links on the closing slide.
 
-**Key takeaway:** Agentic security brings prevention, detection, and remediation directly into the tools and workflows developers already use. By securing agent-generated code, extending security analysis across the development lifecycle, and automating remediation, GitHub helps teams ship software faster and more securely.
+**Key takeaway:** Agentic security brings detection and remediation closer to where developers work, helping teams build and ship software securely without slowing down development.
