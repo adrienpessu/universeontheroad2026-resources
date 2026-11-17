@@ -12,7 +12,7 @@ The story is bigger than individual feature announcements. As teams delegate mor
 
 | Resource | Purpose |
 | --- | --- |
-| [Presentation deck](https://microsofteur.sharepoint.com/:p:/t/UniverseontheRoad/cQrlH1h0WC9PTL9HrxsB8PPrEgUBnqS4_-9vs7qONi7tNwqWjQ) | Slides and embedded presenter notes . |
+| [Presentation deck](https://microsofteur.sharepoint.com/:p:/t/UniverseontheRoad/cQrpVwc1wg6ASbbYtPXhDCf6EgUBNbP-Z9sqVn3R4DczyhwO0g) | Slides and embedded presenter notes . |
 | [Speaker guide](./SPEAKER_README.md) | Suggested run of show, slide-by-slide talking points, transitions, and preparation checklist. |
 
 
