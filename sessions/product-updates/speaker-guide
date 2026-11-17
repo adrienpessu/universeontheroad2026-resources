@@ -1,0 +1,137 @@
+
+# Speaker Guide: Product Deep Dive
+
+## Session overview
+
+This session explores how GitHub is evolving to support an agent-native software development lifecycle, where humans and AI agents collaborate to plan, build, verify, and deliver software.
+
+The session covers GitHub's investment in platform scalability, connected Copilot experiences, agent orchestration, enterprise governance, AI-powered security, and measuring the outcomes of agent-driven development.
+
+**Core message:** As agents take on more development work, GitHub is evolving every layer of the platform to support them. The goal isn't simply to generate more code or consume more tokens, but to help developers complete valuable work faster, securely, and at scale.
+
+### Before you present
+
+- Review the presentation deck and embedded speaker notes.
+- Familiarise yourself with GitHub's engineering investments, Copilot runtime, Memory, Dreaming, Fusion, Cloud Sandboxes, and enterprise governance capabilities.
+- Review the product announcements and confirm the availability of features marked GA or preview.
+- Familiarise yourself with AI Scan, code scanning for AI applications, and Agentic Autofix.
+- Verify the statistics, benchmarks, and data residency information used throughout the presentation.
+- Confirm the presenter name, event location, and transitions into and out of the session.
+- Review the corrections and incomplete speaker notes identified in the presenter checklist.
+
+**Session timing:** Approximately 30 minutes of presentation slides. No live demonstrations are specified in the deck.
+
+## Session flow
+
+### 1. Why GitHub is evolving (Slides 1–3)
+
+- Introduce the shift towards agent-native software development and how AI agents are changing the scale and pace of software engineering.
+- Explain how the growth of agent-driven development is creating new demands on GitHub's infrastructure and services.
+- Highlight the significant growth in pull requests, commits, pushes, and GitHub Actions activity.
+- Explain that agents are becoming active participants in software development, generating more work that needs to be managed, reviewed, and delivered.
+- Reinforce that GitHub must evolve to support both humans and agents working together at scale.
+
+**Key message:** Agentic development isn't simply changing how code is written. It's changing the demands placed on the entire software development platform.
+
+### 2. Scaling the GitHub platform (Slides 4–5)
+
+- Introduce GitHub's three engineering priorities for supporting growth:
+  - **Capacity headroom:** Scaling infrastructure and moving services to Azure, while maintaining capacity to handle increased demand and regional outages.
+  - **Service isolation:** Reducing shared dependencies and improving resilience by preventing failures from affecting other services.
+  - **Safer operations:** Increasing automation, improving operational safeguards, and reducing the likelihood of repeated incidents.
+- Explain why reliability and availability become increasingly important as organisations delegate more work to AI agents.
+- Introduce GitHub Enterprise Cloud data residency and the regional options shown in the deck.
+- Highlight how regional data residency supports enterprise requirements while GitHub continues to scale globally.
+
+**Key message:** A reliable, scalable platform is the foundation for agent-driven development. As agents take on more work, infrastructure needs to keep pace.
+
+### 3. Human and agent collaboration (Slides 6–7)
+
+- Introduce the evolution of the software development lifecycle, where humans and agents collaborate across planning, building, verification, and observation.
+- Explain why collaboration now needs to extend beyond traditional developer-to-developer workflows.
+- Highlight how GitHub is connecting agent sessions and development context across tools and environments.
+- Introduce the capabilities supporting this experience:
+  - Session sharing and continuation.
+  - Copilot integration with collaboration tools such as Slack.
+  - Organisational reporting and ROI metrics.
+- Explain why maintaining context across sessions helps developers continue work without repeatedly rebuilding the same understanding.
+- Reinforce the importance of visibility into agent activity and the outcomes being delivered.
+
+**Key message:** Agents become more valuable when their work, context, and results can be shared across developers, teams, and tools.
+
+### 4. Measuring outcomes and improving AI economics (Slides 8–10)
+
+- Explain how agent-driven development is changing AI consumption patterns, with longer sessions, parallel agents, and more complex tasks increasing token usage.
+- Highlight that higher token consumption reflects changing development practices, but doesn't automatically represent higher productivity.
+- Introduce the importance of measuring **outcomes rather than output**.
+- Explain how enterprise metrics, reporting, FinOps, and governance help organisations understand adoption, productivity, and AI investment.
+- Highlight the importance of identifying successful practices and understanding how model selection, workflows, and cost controls influence results.
+- Introduce the Copilot harness and explain how managing context, tools, execution, and retries can improve task completion and cost efficiency.
+- Use the DeepSWE benchmark comparison to illustrate why model performance should be evaluated alongside the surrounding agentic system.
+
+**Key message:** The value of AI isn't measured by how many tokens are consumed. It's measured by how effectively teams complete useful work at an acceptable cost.
+
+### 5. Building agent-native experiences (Slides 11–15)
+
+- Introduce the capabilities that support agents working across complex development tasks:
+  - **Memory:** Allowing agents to retain and share useful knowledge about a codebase.
+  - **Dreaming:** Helping improve future agent behaviour by learning from previous sessions and work.
+  - **Cloud Sandboxes:** Providing isolated cloud environments for agent-driven development.
+  - **Copilot Fusion:** Supporting intelligent orchestration and model selection.
+- Explain how multiple agents can work in parallel on different parts of a feature, such as API changes, caching, testing, and documentation.
+- Highlight how agents can produce draft pull requests for developers to review and validate.
+- Introduce the concept of **build anywhere, govern everywhere**.
+- Explain how agent sessions and context can continue across supported development environments and collaboration surfaces, including VS Code, the Copilot app, CLI, GitHub.com, and mobile.
+- Introduce the shared Copilot runtime and how GitHub is bringing a more consistent agent experience across its products and supported Microsoft integrations.
+- Reinforce that enterprise governance and developer oversight remain important regardless of where agents execute work.
+
+**Key message:** GitHub is connecting the developer experience so that agents can work across tools, environments, and devices while retaining context and remaining subject to enterprise controls.
+
+### 6. Verification, quality, and security (Slides 16–19)
+
+- Explain why security and verification become increasingly important as the volume of agent-generated changes grows.
+- Highlight the increase in published Common Vulnerabilities and Exposures (CVEs) shown in the deck as an example of the growing security workload.
+- Introduce GitHub's approach to maintaining engineering quality through:
+  - Agentic threat modelling.
+  - Code quality checks.
+  - Higher-reasoning code reviews.
+  - Automated validation and testing.
+  - Continuous integration.
+  - Agentic Autofix.
+- Explain why security must be integrated into developer and agent workflows rather than treated as a separate stage before release.
+- Highlight GitHub's capabilities across code review, code security, and software supply chain protection.
+- Introduce the AI-powered security capabilities:
+  - **AI Scan for repositories:** Repository-wide analysis, including languages outside CodeQL coverage.
+  - **Code scanning for AI applications:** Identifying risks such as indirect prompt injection, sensitive information disclosure, and excessive agency.
+  - **Agentic Autofix:** Investigating vulnerabilities, proposing remediation, and creating pull requests for review.
+- Reinforce that automated verification and remediation support developers but do not remove the need for human judgement.
+
+**Key message:** As agents accelerate development, verification and security must scale alongside them. The goal is to help teams deliver more software without compromising quality or trust.
+
+### 7. Connecting the agent-native development lifecycle (Slides 20–22)
+
+- Bring together the capabilities introduced throughout the session and explain how they contribute to the new GitHub flow.
+- Introduce how GitHub Issues, pull requests, Actions, sessions, and events provide shared context for developers and agents.
+- Explain how Copilot Automations and agentic workflows can respond to events and move work through planning, building, verification, and observation.
+- Highlight how completed work and development signals can inform future activity.
+- Reinforce the role of Memory and Dreaming in improving how agents work with existing context and learn from previous tasks.
+- Explain how ROI reporting and FinOps help organisations measure adoption, optimise spending, and improve development practices.
+- Close the section by shifting the focus from individual activities to completed outcomes, such as fixing bugs, delivering features, updating dependencies, and completing migrations.
+
+**Key message:** The new GitHub flow connects people, agents, development context, and automation into a continuous process focused on delivering measurable results.
+
+### 8. Wrap-up and closing (Slides 23–24)
+
+- Reinforce how GitHub is evolving every layer of the platform to support agent-native development.
+- Summarise the key investments:
+  - Scaling GitHub's infrastructure to support increased demand.
+  - Connecting developers and agents through shared sessions, context, and tools.
+  - Improving AI efficiency through intelligent orchestration and stronger economics.
+  - Embedding verification, code quality, and security throughout the development lifecycle.
+  - Helping enterprises govern AI adoption and measure its value.
+- Emphasise that developers remain responsible for directing work, reviewing results, and deciding what is ready to ship.
+- Encourage attendees to consider how these capabilities can improve their own development workflows.
+- Thank the audience and hand back to the event host.
+
+**Key message:** GitHub is building a connected platform where humans and agents work together to deliver software faster, with the intelligence, governance, and quality needed to ship confidently.
+
