@@ -8,7 +8,7 @@ The opening keynote sets the scene for the event, highlights the key themes from
 
 | Item | Link | Purpose |
 | --- | --- | --- |
-| Presentation deck | [Opening keynote slides (SharePoint)]([https://microsofteur.sharepoint.com/:p:/t/UniverseontheRoad/cQpyoa3HRBrTQo3XWiPbk66oEgUB_QMcAoy3R5YtTOHcY35sdQ](https://microsofteur.sharepoint.com/:p:/t/UniverseontheRoad/cQrLHyoD-vzEQoFImwTEAC9lEgUBE6pCwM5aCw4sKnV5bEG60Q)) | Official slides and speaker notes for the keynote |
+| Presentation deck | [Opening keynote slides (SharePoint)](https://microsofteur.sharepoint.com/:p:/t/UniverseontheRoad/cQpDCOEsFrMGTaUPCHNoVXw7EgUBysWzHZtnEFV4RCjcvXDVMg) | Official slides and speaker notes for the keynote |
 | Next session | [Product Updates — Presenter Resources](../product-updates/README.md) | Follow-on session covering product announcements and demonstrations |
 
 > **Before the event:** Confirm access to the deck using your presenter account and download an offline copy.
