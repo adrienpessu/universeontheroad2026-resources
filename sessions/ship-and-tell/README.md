@@ -15,12 +15,19 @@ The goal is an interactive, community-led finish to the event. Keep submissions 
 | Session | 25 minutes; confirm the local event schedule |
 | Submission cutoff | At least 30 minutes before the session (for example, 15:00 for a 15:35 start) |
 
+
 ## Delivery resources
+
+This README is the complete Ship & Tell execution guide.
+Follow the steps below to prepare, rehearse, and deliver
+the session.
 
 | Resource | Link | Purpose |
 | --- | --- | --- |
-| How to run the session | [How to run the session](HOW_TO_RUN_THE_SESSION.md) | Step-by-step instructions for nominations, files, stage preparation, voting and prizes |
-The [how-to guide](HOW_TO_RUN_THE_SESSION.md) provides the complete day-of workflow. Use this README for the standard format and ownership checklist.
+| How to run the session | [Step-by-step instructions](#1-assign-responsibilities-before-the-event) | Nominations, project selection, stage preparation, voting, and prizes |
+| Final checklist | [Preparation checklist](#final-checklist) | Confirm everything is ready before the session |
+| Host deck guide | [Host content README](../host-content/README.md) | Host slides, transitions, and presenter preparation |
+
 
 ## 1. Assign responsibilities before the event
 
