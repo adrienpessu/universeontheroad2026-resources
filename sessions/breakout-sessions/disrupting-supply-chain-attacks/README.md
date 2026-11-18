@@ -7,7 +7,7 @@ Presenter and re-delivery materials for **Disrupting supply chain attacks: A thr
 
 | Item | Link | Purpose |
 | --- | --- | --- |
-| Presentation deck | [Slides]([TBD](https://microsofteur.sharepoint.com/:f:/t/UniverseontheRoad/cgqQmHhTh1HHQa4z6FPQdTPdEgUBnLz1pV_NPILdXMS0iF_06A)) | Slides and speaker notes |
+| Presentation deck | [Slides](https://microsofteur.sharepoint.com/:p:/t/UniverseontheRoad/cQpBIR40Qm-VRZ8UdgR--o0EEgUBTp_j462tZiM7ZxmuoWxzSw) | Slides and speaker notes |
 | Session recording | [Watch recording](https://www.youtube.com/watch?v=5A3d7_aDA0I) | See the talk and demo delivered |
 | Presenter guide | [presenter guide](speaker-resources/presenter-guide.md) | Use the deck, speaker notes, and recording |
 | Demo resources | Built into the deck | Use the demos shown in the recording |
